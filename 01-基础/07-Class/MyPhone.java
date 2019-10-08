@@ -26,5 +26,7 @@ public class MyPhone {
         mainboard.storage = new Storage();
         mainboard.storage.producer = "Intel";
         mainboard.storage.capacity = 256;
+
+        phone.prePhone.hasFingurePrintUnlocker = true;
     }
 }
