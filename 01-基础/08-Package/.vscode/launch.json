@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MyPhone",
+            "request": "launch",
+            "mainClass": "com.phone.MyPhone"
+        }
+    ]
+}
