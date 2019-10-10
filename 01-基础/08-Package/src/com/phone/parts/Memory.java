@@ -5,6 +5,6 @@
 package com.phone.parts;
 
 public class Memory {
-    long capacity;
-    String producer;
+    public long capacity;
+    public String producer;
 }

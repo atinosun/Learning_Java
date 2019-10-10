@@ -2,6 +2,7 @@ package com.phone;
 
 //同级不需要引用
 //import com.phone.Phone;
+//import com.phone.parts.*;
 import com.phone.parts.*;
 
 public class MyPhone {
@@ -17,6 +18,7 @@ public class MyPhone {
         phone.screen = new Screen();
 
         // 通过引用phone找到Phone的对象，再通过screen找到Screen对象，通过.producer给之赋值
+        // 如果
         phone.screen.producer = "京东方";
         phone.screen.size = 6.6;
 
@@ -33,6 +35,7 @@ public class MyPhone {
         mainboard.storage.producer = "Intel";
         mainboard.storage.capacity = 256;
 
-        phone.prePhone.hasFingurePrintUnlocker = true;
+        //空指针异常
+        //phone.prePhone.hasFingurePrintUnlocker = true;
     }
 }

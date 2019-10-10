@@ -1,10 +1,10 @@
 package com.phone.parts;
 
 public class Mainboard {
-    CPU cpu;
-    Memory memory;
-    Storage storage;
-    String model;
+    public CPU cpu;
+    public Memory memory;
+    public Storage storage;
+    public String model;
     //上市年份
-    int year;
+    public int year;
 }
