@@ -38,4 +38,6 @@ public class MyPhone {
         //空指针异常
         //phone.prePhone.hasFingurePrintUnlocker = true;
     }
+
+
 }
