@@ -1,10 +1,10 @@
 /**
- * Screen
+ * Storage
  */
-
 package com.phone.parts;
 
-public class Screen {
-    double size;
+public class Storage {
+
+    long capacity;
     String producer;
 }
