@@ -12,4 +12,19 @@ public class LittleSuperMarket {
     public double        incomingSum;
     public Merchandise[] merchandises;
     public int[]         merchandiseSold;
+
+    public Merchandise getBiggestProfitMerchandise() {
+        Merchandise cur = null;
+        for ( int i = 0; i < merchandises.length; i++ ) {
+            Merchandise m = merchandises[i];
+            cur = cur != null ? cur : m;
+
+            double currProfit = cur.calculateProfit();
+            double newProfit  = m.calculateProfit();
+
+            cur = currProfit > newProfit ? cur : m;
+        }
+
+        return cur;
+    }
 }

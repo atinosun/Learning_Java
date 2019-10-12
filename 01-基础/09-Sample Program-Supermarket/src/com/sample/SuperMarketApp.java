@@ -37,6 +37,8 @@ public class SuperMarketApp {
             all[i] = m;
         }
 
+        System.out.println("下面请利润最高的商品自我介绍：");
+        littleSuperMarket.getBiggestProfitMerchandise().describe();
         System.out.println("超市开张了!");
 
         boolean open  = true;
