@@ -75,7 +75,9 @@ public class SuperMarketApp {
             double totalCost = 0;
             while ( true ) {
                 System.out.println("本店提供" + littleSuperMarket.merchandises.length + "种商品，请输入您要购买的商品编号：");
+                System.out.println("今日特惠，商品第二件半价！");
                 int merchandiseId = input.nextInt();
+
                 //负数中断购物
                 if ( merchandiseId < 0 ) {
                     System.out.println("您本次购买了" + totalCost + "元商品。期待您下次光临！");
@@ -86,6 +88,9 @@ public class SuperMarketApp {
                     System.out.println("商品编号不存在，请确认后重试！");
                     continue;
                 }
+
+                double price = littleSuperMarket.merchandises[merchandiseId].purchasePrice;
+                System.out.println("商品单价为：" + price + "元。");
 
                 //待选商品
                 Merchandise toBuy = littleSuperMarket.merchandises[merchandiseId];
@@ -102,12 +107,22 @@ public class SuperMarketApp {
                     continue;
                 }
 
-                if ( numToBuy * toBuy.soldPrice + totalCost > customer.money ) {
+                //double cost = toBuy.buy(numToBuy);
+                double  cost       = toBuy.buyAndPrintLeft(numToBuy, true);
+                boolean biggerThan = toBuy.totalValueBiggerThan(all[0]);
+                char    biggerText = biggerThan ? '小' : '大';
+                System.out.println("0号商品的总价值比用户选择的" + biggerText);
+                System.out.println("是否是价值最高的商品：" + (toBuy.isTheBiggestTotalValueOne(littleSuperMarket) ? '是' : '否'));
+
+
+
+                if ( (cost + totalCost) > customer.money ) {
                     System.out.println("余额不足，请重新挑选。");
                     continue;
                 }
 
-                totalCost += numToBuy * toBuy.soldPrice;
+
+                totalCost += cost;
                 toBuy.count -= numToBuy;
                 littleSuperMarket.merchandiseSold[merchandiseId] += numToBuy;
 
