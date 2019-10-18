@@ -53,6 +53,26 @@ public class Merchandise {
         return cost;
     }
 
+    public double buy() {
+        return buy(1);
+    }
+
+    //overload
+    public double buy(int countToBuy, boolean isVIP) {
+        if (this.count < countToBuy) {
+            return -1;
+        }
+
+        this.count -= countToBuy;
+        double totalCost = count * soldPrice;
+
+        if (isVIP) {
+            totalCost *= 0.95;
+        }
+
+        return totalCost;
+    }
+
     public double buyAndPrintLeft(int countToBuy, boolean printLeft) {
         if ( count < countToBuy ) {
             System.out.println("商品库存不够");
